@@ -29,7 +29,8 @@ SRC_URI += " \
 
 SUMMARY = "Simple rust software to mount filesystems"
 HOMEPAGE = "https://github.com/NeroReflex/atomrootfsinit"
-LICENSE = "GPL-2.0-or-later"
+#LICENSE = "GPL-2.0-or-later"
+LICENSE = "CLOSED"
 
 # includes this file if it exists but does not fail
 # this is useful for anything you may want to override from
