@@ -9,7 +9,7 @@ inherit cargo
 # SRC_URI += "crate://crates.io/atomrootfsinit/0.6.12"
 SRC_URI += "git://github.com/NeroReflex/atomrootfsinit.git;protocol=https;nobranch=1;branch=main"
 SRC_URI[libc-0.2.173.sha256sum] = "d8cfeafaffdbc32176b64fb251369d52ea9f0a8fbc6f8759edffef7b525d64bb"
-SRCREV = "bf064e92929627710ed8d15382e74b3f86013e72"
+SRCREV = "88a88ea5ba080f40208492ea74be1c365e2f1ceb"
 S = "${WORKDIR}/git"
 CARGO_SRC_DIR = ""
 
@@ -23,9 +23,9 @@ SRC_URI += " \
 
 
 
-LIC_FILES_CHKSUM = " \
-    file://GPL-2.0-or-later;md5=9e7997fcb3ca1892479c156fe720975d \
-"
+#LIC_FILES_CHKSUM = " \
+#    file://GPL-2.0-or-later;md5=9e7997fcb3ca1892479c156fe720975d \
+#"
 
 SUMMARY = "Simple rust software to mount filesystems"
 HOMEPAGE = "https://github.com/NeroReflex/atomrootfsinit"
