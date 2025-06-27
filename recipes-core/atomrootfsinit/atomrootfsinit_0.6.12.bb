@@ -22,9 +22,9 @@ SRC_URI += " \
 
 
 
-# FIXME: update generateme with the real MD5 of the license file
+
 LIC_FILES_CHKSUM = " \
-    file://GPL-2.0-or-later;md5=generateme \
+    file://GPL-2.0-or-later;md5=9e7997fcb3ca1892479c156fe720975d \
 "
 
 SUMMARY = "Simple rust software to mount filesystems"
