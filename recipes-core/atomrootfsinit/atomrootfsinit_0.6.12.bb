@@ -8,6 +8,7 @@ inherit cargo
 # how to get atomrootfsinit could be as easy as but default to a git checkout:
 # SRC_URI += "crate://crates.io/atomrootfsinit/0.6.12"
 SRC_URI += "git://github.com/NeroReflex/atomrootfsinit.git;protocol=https;nobranch=1;branch=main"
+SRC_URI[libc-0.2.173.sha256sum] = "d8cfeafaffdbc32176b64fb251369d52ea9f0a8fbc6f8759edffef7b525d64bb"
 SRCREV = "bf064e92929627710ed8d15382e74b3f86013e72"
 S = "${WORKDIR}/git"
 CARGO_SRC_DIR = ""
