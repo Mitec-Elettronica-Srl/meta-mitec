@@ -1,3 +1,10 @@
+# This recipe is for the i.MX fork of weston. For ease of
+# maintenance, the top section is a verbatim copy of an OE-core
+# recipe. The second section customizes the recipe for i.MX.
+
+########### OE-core copy ##################
+# Upstream hash: 23271a1f908a223b4eb56d6034cbb1ac23da14fe
+
 SUMMARY = "Weston, a Wayland compositor"
 DESCRIPTION = "Weston is the reference implementation of a Wayland compositor"
 HOMEPAGE = "http://wayland.freedesktop.org"
@@ -7,13 +14,14 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=d79ee9e66bb0f95d3386a7acae780b70 \
                     "
 
 SRC_URI = "https://gitlab.freedesktop.org/wayland/weston/-/releases/${PV}/downloads/${BPN}-${PV}.tar.xz \
+           file://0001-libweston-tools-Include-libgen.h-for-basename-signat.patch \
            file://weston.png \
            file://weston.desktop \
            file://xwayland.weston-start \
            file://systemd-notify.weston-start \
            "
 
-SRC_URI[sha256sum] = "b47216b3530da76d02a3a1acbf1846a9cd41d24caa86448f9c46f78f20b6e0ac"
+SRC_URI[sha256sum] = "27f68d96e3b97d98daadef13a202356524924fa381418fa6716b9136ef099093"
 
 UPSTREAM_CHECK_URI = "https://gitlab.freedesktop.org/wayland/weston/-/tags"
 UPSTREAM_CHECK_REGEX = "releases/(?P<pver>\d+\.\d+\.(?!9\d+)\d+)"
@@ -25,13 +33,13 @@ inherit meson pkgconfig useradd
 require ${THISDIR}/required-distro-features.inc
 
 DEPENDS = "libxkbcommon gdk-pixbuf pixman cairo glib-2.0"
-DEPENDS += "wayland wayland-protocols libinput virtual/egl pango wayland-native libdisplay-info"
+DEPENDS += "wayland wayland-protocols libinput virtual/egl pango wayland-native"
 
 LDFLAGS += "${@bb.utils.contains('DISTRO_FEATURES', 'lto', '-Wl,-z,undefs', '', d)}"
 
 WESTON_MAJOR_VERSION = "${@'.'.join(d.getVar('PV').split('.')[0:1])}"
 
-EXTRA_OEMESON += "-Dpipewire=false -Dtests=false"
+EXTRA_OEMESON += "-Dpipewire=false"
 
 PACKAGECONFIG ??= "${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'kms wayland egl clients', '', d)} \
                    ${@bb.utils.contains('DISTRO_FEATURES', 'x11 wayland', 'xwayland', '', d)} \
@@ -72,7 +80,9 @@ PACKAGECONFIG[webp] = "-Dimage-webp=true,-Dimage-webp=false,libwebp"
 # Weston with systemd support
 PACKAGECONFIG[systemd] = "-Dsystemd=true,-Dsystemd=false,systemd dbus"
 # Weston with Xwayland support (requires X11 and Wayland)
-PACKAGECONFIG[xwayland] = "-Dxwayland=true,-Dxwayland=false,libxcb libxcursor xwayland"
+PACKAGECONFIG[xwayland] = "-Dxwayland=true,-Dxwayland=false,libxcb libxcursor xcb-util-cursor xwayland"
+# colord CMS support
+PACKAGECONFIG[colord] = "-Ddeprecated-color-management-colord=true,-Ddeprecated-color-management-colord=false,colord"
 # Clients support
 PACKAGECONFIG[clients] = "-Dsimple-clients=${SIMPLECLIENTS} -Ddemo-clients=true,-Dsimple-clients= -Ddemo-clients=false"
 # Virtual remote output with GStreamer on DRM backend
@@ -92,7 +102,8 @@ PACKAGECONFIG[image-jpeg] = "-Dimage-jpeg=true,-Dimage-jpeg=false, jpeg"
 # screencasting via PipeWire
 PACKAGECONFIG[pipewire] = "-Dbackend-pipewire=true,-Dbackend-pipewire=false,pipewire"
 # VNC remote screensharing
-PACKAGECONFIG[vnc] = "-Dbackend-vnc=true,-Dbackend-vnc=false,neatvnc libpam"
+PACKAGECONFIG[vnc] = "-Dbackend-vnc=true,-Dbackend-vnc=false,neatvnc"
+
 
 do_install:append() {
 	# Weston doesn't need the .la files to load modules, so wipe them
@@ -136,7 +147,51 @@ RDEPENDS:${PN}-xwayland += "xwayland"
 
 RDEPENDS:${PN} += "xkeyboard-config"
 RRECOMMENDS:${PN} = "weston-init liberation-fonts"
-RDEPENDS:${PN}-dev += "wayland-protocols-dev"
+RRECOMMENDS:${PN}-dev += "wayland-protocols"
 
 USERADD_PACKAGES = "${PN}"
 GROUPADD_PARAM:${PN} = "--system weston-launch"
+
+########### End of OE-core copy ###########
+
+########### i.MX overrides ################
+
+SUMMARY = "Weston, a Wayland compositor, i.MX fork"
+LIC_FILES_CHKSUM:remove = "file://COPYING;md5=d79ee9e66bb0f95d3386a7acae780b70"
+LIC_FILES_CHKSUM +=       "file://LICENSE;md5=d79ee9e66bb0f95d3386a7acae780b70"
+
+DEFAULT_PREFERENCE = "-1"
+
+DEPENDS:append = " libdisplay-info"
+
+SRC_URI:remove = "https://gitlab.freedesktop.org/wayland/weston/-/releases/${PV}/downloads/${BPN}-${PV}.tar.xz"
+SRC_URI:prepend = "${WESTON_SRC};branch=${SRCBRANCH} "
+WESTON_SRC ?= "git://github.com/nxp-imx/weston-imx.git;protocol=https"
+SRCBRANCH = "weston-imx-14.0.1"
+SRCREV = "0fd5d3ab75346e525b565039a7b8bf5d9008be78"
+S = "${WORKDIR}/git"
+
+SRC_URI:remove = "file://0001-libweston-tools-Include-libgen.h-for-basename-signat.patch"
+
+PACKAGECONFIG_IMX_REMOVALS ?= "wayland x11"
+PACKAGECONFIG:remove = "${PACKAGECONFIG_IMX_REMOVALS}"
+
+PACKAGECONFIG:append = " ${PACKAGECONFIG_G2D}"
+PACKAGECONFIG_G2D              ??= ""
+PACKAGECONFIG_G2D:imxgpu2d     ??= "imxg2d"
+PACKAGECONFIG_G2D:mx93-nxp-bsp ??= "imxg2d"
+
+# Remove no longer supported colord
+PACKAGECONFIG[colord] = ""
+
+# Weston with i.MX G2D renderer
+PACKAGECONFIG[imxg2d] = "-Drenderer-g2d=true,-Drenderer-g2d=false,virtual/libg2d"
+
+# links with imx-gpu libs which are pre-built for glibc
+# gcompat will address it during runtime
+LDFLAGS:append:imxgpu:libc-musl = " -Wl,--allow-shlib-undefined"
+
+PACKAGE_ARCH = "${MACHINE_SOCARCH}"
+COMPATIBLE_MACHINE = "(imx-nxp-bsp)"
+
+########### End of i.MX overrides #########
