@@ -6,8 +6,8 @@ LICENSE = "AGPL-3.0-or-later"
 
 # Updated download URL for the ARM 64-bit AppImage
 SRC_URI = "https://github.com/rustdesk/${PN}/releases/download/${PV}/${PN}-${PV}-aarch64.AppImage"
-SRC_URI[md5sum] = "YOUR_APPIMAGE_MD5"
-SRC_URI[sha256sum] = "YOUR_APPIMAGE_SHA256"
+SRC_URI[md5sum] = "06f76316d2fd8b14a84e581c9f9ad7ad"
+SRC_URI[sha256sum] = "817ad39f7d1e0723fea71c15f1cd6381fae5f43936dbc45a0c39b1aa38c1d270"
 
 S = "${WORKDIR}"
 
