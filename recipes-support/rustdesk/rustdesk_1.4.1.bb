@@ -13,8 +13,6 @@ S = "${WORKDIR}"
 
 RDEPENDS${PN}=" xwayland"
 
-inherit appimage
-
 # Specify the target architecture
 #TARGET_ARCH = "arm64"
 
@@ -23,7 +21,7 @@ inherit appimage
 
 do_install() {
     install -d ${D}/usr/bin
-    install -m 0755 ${S}/rustdesk-1.4.1-aarch64.AppImage ${D}/usr/bin/rustdesk
+    install -m 0755 ${S}/${PN}-${PV}-aarch64.AppImage ${D}/usr/bin/rustdesk
 }
 
 # Ensure the AppImage is executable
