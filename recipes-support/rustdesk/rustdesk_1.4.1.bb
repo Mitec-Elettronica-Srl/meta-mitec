@@ -35,6 +35,8 @@ do_install() {
 # libgtk-3-0
 #RDEPENDS:${PN} = " glib"
 
+INSANE_SKIP:${PN} += "already-stripped"
+
 # Specify the package name
 PACKAGES = "${PN}"
 
