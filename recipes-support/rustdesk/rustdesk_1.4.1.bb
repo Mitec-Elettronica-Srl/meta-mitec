@@ -11,6 +11,8 @@ SRC_URI[sha256sum] = "YOUR_APPIMAGE_SHA256"
 
 S = "${WORKDIR}"
 
+RDEPENDS${PN}=" xwayland"
+
 inherit appimage
 
 # Specify the target architecture
