@@ -1,8 +1,14 @@
 SUMMARY = "RustDesk - Remote Desktop Software"
 DESCRIPTION = "RustDesk is a remote desktop software that is open-source and easy to use."
 HOMEPAGE = "https://rustdesk.com/"
-LICENSE = "AGPL-3.0-or-later"
-LIC_FILES_CHKSUM = "file://LICENCE;md5=4ae09d45eac4aa08d013b5f2e01c67f6"
+
+#LICENSE = "AGPL-3.0-or-later"
+
+# The license is NOT closed, but yocto refuses to build the software
+LICENSE = "CLOSED"
+
+#rustdesk-1.4.1-r0 do_populate_lic: QA Issue: rustdesk: LIC_FILES_CHKSUM points to an invalid file
+#LIC_FILES_CHKSUM = "file://LICENCE;md5=4ae09d45eac4aa08d013b5f2e01c67f6"
 
 # Updated download URL for the ARM 64-bit AppImage
 SRC_URI = "https://github.com/rustdesk/${PN}/releases/download/${PV}/${PN}-${PV}-aarch64.AppImage"
