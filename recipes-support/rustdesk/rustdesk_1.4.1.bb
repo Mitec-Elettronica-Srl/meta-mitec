@@ -32,7 +32,7 @@ do_configure() {
 # Add any additional dependencies if required
 # libglib-2.0-0
 # libgtk-3-0
-RDEPENDS:${PN} = " glib"
+#RDEPENDS:${PN} = " glib"
 
 # Specify the package name
 PACKAGES = "${PN}"
