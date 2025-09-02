@@ -2,7 +2,7 @@ SUMMARY = "RustDesk - Remote Desktop Software"
 DESCRIPTION = "RustDesk is a remote desktop software that is open-source and easy to use."
 HOMEPAGE = "https://rustdesk.com/"
 LICENSE = "AGPL-3.0-or-later"
-#LIC_FILES_CHKSUM = "file://LICENSE;md5=YOUR_LICENSE_MD5"
+LIC_FILES_CHKSUM = "file://LICENCE;md5=4ae09d45eac4aa08d013b5f2e01c67f6"
 
 # Updated download URL for the ARM 64-bit AppImage
 SRC_URI = "https://github.com/rustdesk/${PN}/releases/download/${PV}/${PN}-${PV}-aarch64.AppImage"
