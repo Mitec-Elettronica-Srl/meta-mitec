@@ -30,11 +30,6 @@ do_install() {
     install -m 0755 ${S}/${PN}-${PV}-aarch64.AppImage ${D}/usr/bin/rustdesk
 }
 
-# Ensure the AppImage is executable
-do_configure() {
-    chmod +x ${D}/usr/bin/rustdesk
-}
-
 # Add any additional dependencies if required
 # libglib-2.0-0
 # libgtk-3-0
