@@ -11,9 +11,10 @@ LICENSE = "CLOSED"
 #LIC_FILES_CHKSUM = "file://LICENCE;md5=4ae09d45eac4aa08d013b5f2e01c67f6"
 
 # Updated download URL for the ARM 64-bit AppImage
-SRC_URI = "https://github.com/NeroReflex/${PN}/releases/download/${PV}/${PN}-${PV}-aarch64.AppImage"
-SRC_URI[md5sum] = "06f76316d2fd8b14a84e581c9f9ad7ad"
-SRC_URI[sha256sum] = "817ad39f7d1e0723fea71c15f1cd6381fae5f43936dbc45a0c39b1aa38c1d270"
+#SRC_URI = "https://github.com/NeroReflex/${PN}/releases/download/${PV}/${PN}-${PV}-aarch64.AppImage"
+SRC_URI = "https://github.com/NeroReflex/${PN}/releases/download/1.4.4/${PN}-${PV}-aarch64.AppImage"
+SRC_URI[md5sum] = "676b96f64520a82b671c067cdb31dd9d"
+SRC_URI[sha256sum] = "73d60b3ec9263fed60d327e4ad3f650e356f86e0200c36a6c6d66d49cd602ab6"
 
 S = "${WORKDIR}"
 
