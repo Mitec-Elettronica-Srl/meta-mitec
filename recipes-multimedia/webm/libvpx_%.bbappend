@@ -1,0 +1,1 @@
+CONFIGUREOPTS += " --enable-vp8 --enable-vp9-highbitdepth "
