@@ -948,8 +948,9 @@ SRC_URI += " \
 # Add any additional dependencies if required
 # libglib-2.0-0
 # libgtk-3-0
-RDEPENDS:${PN} = "  glib xwayland libvpx aom yuv libopus alsa-lib bindgen clang glib gtk+3 libx11 openssl pkgconfig pulseaudio zlib "
-DEPENDS += " alsa-lib glib gtk+3 libx11 openssl pulseaudio zlib bindgen-native clang-native pkgconfig-native libvpx-staticdev aom-staticdev yuv-staticdev libopus-staticdev yasm zip "
+# glib
+RDEPENDS:${PN} = "  xwayland libvpx aom yuv libopus alsa-lib bindgen clang gtk+3 libx11 openssl pkgconfig pulseaudio zlib "
+DEPENDS += " alsa-lib gtk+3 libx11 openssl pulseaudio zlib bindgen-native clang-native pkgconfig-native libvpx-staticdev aom-staticdev yuv-staticdev libopus-staticdev yasm zip "
 
 # Specify the target architecture
 #TARGET_ARCH = "arm64"
