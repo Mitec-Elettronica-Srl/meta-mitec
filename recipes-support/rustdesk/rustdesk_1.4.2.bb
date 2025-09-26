@@ -132,7 +132,7 @@ SRC_URI += " \
     crate://crates.io/colorchoice/1.0.1 \
     crate://crates.io/combine/4.6.7 \
     crate://crates.io/concurrent-queue/2.5.0 \
-    crate://crates.io/confy/0.4.0-2 \
+    crate://crates.io/confy/0.4.0 \
     crate://crates.io/const_fn/0.4.10 \
     crate://crates.io/const_format/0.2.32 \
     crate://crates.io/const_format_proc_macros/0.2.32 \
