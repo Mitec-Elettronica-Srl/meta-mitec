@@ -11,6 +11,11 @@ SRC_URI = " \
     git://github.com/microsoft/vcpkg.git;protocol=https;nobranch=1;branch=main;rev=e6e4bc74aaf5c63dfc358810594f662f7e9bc4d4 \
 "
 
+SRCREV_FORMAT = "${PN}_${SCM_NAME}"
+
+SRCREV_git-rustdesk = "317639169359936f7f9f85ef445ec9774218772d"
+SRCREV_git-vcpkg    = "e6e4bc74aaf5c63dfc358810594f662f7e9bc4d4"
+
 S = "${WORKDIR}"
 
 inherit cargo
