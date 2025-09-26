@@ -4,7 +4,7 @@ HOMEPAGE = "https://rustdesk.com/"
 
 LICENSE = "AGPL-3.0-or-later"
 
-LIC_FILES_CHKSUM = "file://LICENCE;md5=4ae09d45eac4aa08d013b5f2e01c67f6"
+LIC_FILES_CHKSUM = "file://rustdesk/LICENCE;md5=4ae09d45eac4aa08d013b5f2e01c67f6"
 
 SRC_URI = " \
     git://github.com/rustdesk/rustdesk.git;protocol=https;nobranch=1;branch=main;rev=317639169359936f7f9f85ef445ec9774218772d \
