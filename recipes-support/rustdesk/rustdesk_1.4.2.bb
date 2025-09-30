@@ -935,10 +935,13 @@ SRC_URI += " \
     crate://crates.io/zvariant_utils/1.0.1 \
     crate://crates.io/flutter_rust_bridge/1.80.1 \
     crate://crates.io/flutter_rust_bridge_macros/1.82.6 \
+    crate://crates.io/rubato/0.12.0 \
 "
 
 SRC_URI[flutter_rust_bridge-1.80.1.sha256sum] = "fd0305ebc9f097d9826530a55fc2acd63222e912c663f7adce3ab641ecc0f346"
 SRC_URI[flutter_rust_bridge_macros-1.82.6.sha256sum] ="a7fe743d921bedf4578b9472346d03a9643a01cd565ca7df7961baebad534ba5"
+SRC_URI[rubato-0.12.0.sha256sum] = "cd70209c27d5b08f5528bdc779ea3ffb418954e28987f9f9775c6eac41003f9c"
+
 
 SRC_URI[ab_glyph-0.2.31.sha256sum] = "e074464580a518d16a7126262fffaaa47af89d4099d4cb403f8ed938ba12ee7d"
 SRC_URI[ab_glyph_rasterizer-0.1.10.sha256sum] = "366ffbaa4442f4684d91e2cd7c5ea7c4ed8add41959a31447066e279e432b618"
