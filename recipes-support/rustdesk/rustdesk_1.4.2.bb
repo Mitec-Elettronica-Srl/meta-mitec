@@ -182,7 +182,7 @@ SRC_URI += " \
     crate://crates.io/dbus-crossroads/0.5.2 \
     crate://crates.io/debug-helper/0.3.13 \
     crate://crates.io/default-net/0.14.1 \
-    crate://crates.io/default_net/0.1.0 \
+    crate://crates.io/default-net/0.1.0 \
     crate://crates.io/deranged/0.3.11 \
     crate://crates.io/derivative/2.2.0 \
     crate://crates.io/digest/0.10.7 \
