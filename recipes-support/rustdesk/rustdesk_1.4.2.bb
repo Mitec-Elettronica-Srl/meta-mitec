@@ -958,6 +958,7 @@ SRC_URI += " \
     crate://crates.io/realfft/3.3.0 \
     crate://crates.io/rustfft/6.2.0 \
     crate://crates.io/cmake/0.1.50 \
+    crate://crates.io/primal-check/0.3.4 \
     crate://crates.io/block-sys/0.1.0-beta.1 \
 "
 
@@ -983,6 +984,7 @@ SRC_URI[realfft-3.3.0.sha256sum] = "953d9f7e5cdd80963547b456251296efc2626ed4e3cb
 SRC_URI[rustfft-6.2.0.sha256sum] = "43806561bc506d0c5d160643ad742e3161049ac01027b5e6d7524091fd401d86"
 SRC_URI[cmake-0.1.50.sha256sum] = "a31c789563b815f77f4250caee12365734369f942439b7defd71e18a48197130"
 SRC_URI[block-sys-0.1.0-beta.1.sha256sum] = "0fa55741ee90902547802152aaf3f8e5248aab7e21468089560d4c8840561146"
+SRC_URI[primal-check-0.3.4.sha256sum] = "dc0d895b311e3af9902528fbb8f928688abbd95872819320517cc24ca6b2bd08"
 
 SRC_URI[ab_glyph-0.2.31.sha256sum] = "e074464580a518d16a7126262fffaaa47af89d4099d4cb403f8ed938ba12ee7d"
 SRC_URI[ab_glyph_rasterizer-0.1.10.sha256sum] = "366ffbaa4442f4684d91e2cd7c5ea7c4ed8add41959a31447066e279e432b618"
