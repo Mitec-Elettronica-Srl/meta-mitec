@@ -910,6 +910,7 @@ SRC_URI += " \
     crate://crates.io/x11rb/0.12.0 \
     crate://crates.io/x11rb/0.13.1 \
     crate://crates.io/x11rb-protocol/0.13.1 \
+    crate://crates.io/x11rb-protocol/0.12.0 \
     crate://crates.io/xattr/1.4.0 \
     crate://crates.io/xcursor/0.3.10 \
     crate://crates.io/xdg-home/1.2.0 \
