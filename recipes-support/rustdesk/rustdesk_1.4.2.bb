@@ -961,8 +961,10 @@ SRC_URI += " \
     crate://crates.io/primal-check/0.3.4 \
     crate://crates.io/block-sys/0.1.0-beta.1 \
     crate://crates.io/strength_reduce/0.2.4 \
+    crate://crates.io/transpose/0.2.3 \
 "
 
+SRC_URI[transpose-0.2.3.sha256sum] = "1ad61aed86bc3faea4300c7aee358b4c6d0c8d6ccc36524c96e4c92ccf26e77e"
 SRC_URI[flutter_rust_bridge-1.80.1.sha256sum] = "fd0305ebc9f097d9826530a55fc2acd63222e912c663f7adce3ab641ecc0f346"
 SRC_URI[flutter_rust_bridge_macros-1.82.6.sha256sum] ="a7fe743d921bedf4578b9472346d03a9643a01cd565ca7df7961baebad534ba5"
 SRC_URI[rubato-0.12.0.sha256sum] = "cd70209c27d5b08f5528bdc779ea3ffb418954e28987f9f9775c6eac41003f9c"
