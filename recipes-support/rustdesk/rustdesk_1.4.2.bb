@@ -1869,10 +1869,6 @@ DEPENDS += " alsa-lib gtk+3 libx11 openssl pulseaudio zlib bindgen-cli-native cl
 
 do_compile[env] = "VCPKG=${S}/vcpkg"
 
-do_configure:append() {
-    git submodule update --init --recursive
-}
-
 FILES:${PN} += " \
     ${libdir}/libsciter-gtk.so \
 "
