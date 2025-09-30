@@ -65,6 +65,7 @@ SRC_URI += " \
     crate://crates.io/async-trait/0.1.80 \
     crate://crates.io/atk/0.18.0 \
     crate://crates.io/atk-sys/0.18.0 \
+    crate://crates.io/atomic/0.5.3 \
     crate://crates.io/atomic-waker/1.1.2 \
     crate://crates.io/atty/0.2.14 \
     crate://crates.io/auto_impl/1.3.0 \
@@ -1026,6 +1027,7 @@ SRC_URI[async-task-4.7.1.sha256sum] = "8b75356056920673b02621b35afd0f7dda9306d03
 SRC_URI[async-trait-0.1.80.sha256sum] = "c6fa2087f2753a7da8cc1c0dbfcf89579dd57458e36769de5ac750b4671737ca"
 SRC_URI[atk-0.18.0.sha256sum] = "b4af014b17dd80e8af9fa689b2d4a211ddba6eb583c1622f35d0cb543f6b17e4"
 SRC_URI[atk-sys-0.18.0.sha256sum] = "251e0b7d90e33e0ba930891a505a9a35ece37b2dd37a14f3ffc306c13b980009"
+SRC_URI[atomic-0.5.3.sha256sum] = "c59bdb34bc650a32731b31bd8f0829cc15d24a708ee31559e0bb34f2bc320cba"
 SRC_URI[atomic-waker-1.1.2.sha256sum] = "1505bd5d3d116872e7271a6d4e16d81d0c8570876c8de68093a09ac269d8aac0"
 SRC_URI[atty-0.2.14.sha256sum] = "d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8"
 SRC_URI[auto_impl-1.3.0.sha256sum] = "ffdcb70bdbc4d478427380519163274ac86e52916e10f0a8889adf0f96d3fee7"
