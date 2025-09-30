@@ -766,6 +766,7 @@ SRC_URI += " \
     crate://crates.io/utf-8/0.7.6 \
     crate://crates.io/utf8-width/0.1.7 \
     crate://crates.io/utf8parse/0.2.2 \
+    crate://crates.io/utf16string/0.2.0 \
     crate://crates.io/uuid/1.16.0 \
     crate://crates.io/v4l/0.14.0 \
     crate://crates.io/v4l2-sys-mit/0.3.0 \
@@ -1680,6 +1681,7 @@ SRC_URI[users-0.10.0.sha256sum] = "aa4227e95324a443c9fcb06e03d4d85e91aabe9a5a02a
 SRC_URI[utf-8-0.7.6.sha256sum] = "09cc8ee72d2a9becf2f2febe0205bbed8fc6615b7cb429ad062dc7b7ddd036a9"
 SRC_URI[utf8-width-0.1.7.sha256sum] = "86bd8d4e895da8537e5315b8254664e6b769c4ff3db18321b297a1e7004392e3"
 SRC_URI[utf8parse-0.2.2.sha256sum] = "06abde3611657adf66d383f00b093d7faecc7fa57071cce2578660c9f1010821"
+#SRC_URI[utf16string-0.2.0.sha256sum] = ""
 SRC_URI[uuid-1.16.0.sha256sum] = "458f7a779bf54acc9f347480ac654f68407d3aab21269a6e3c9f922acd9e2da9"
 SRC_URI[v4l-0.14.0.sha256sum] = "d8fbfea44a46799d62c55323f3c55d06df722fbe577851d848d328a1041c3403"
 SRC_URI[v4l2-sys-mit-0.3.0.sha256sum] = "6779878362b9bacadc7893eac76abe69612e8837ef746573c4a5239daf11990b"
