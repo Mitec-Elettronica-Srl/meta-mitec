@@ -1923,13 +1923,13 @@ CARGO_VENDOR_DIR = "${WORKDIR}/vendor"
 # libglib-2.0-0
 # libgtk-3-0
 # glib
-RDEPENDS:${PN} = "  xwayland libvpx aom yuv libopus alsa-lib gtk+3 libx11 openssl pulseaudio zlib "
+RDEPENDS:${PN} = "  xwayland libvpx aom yuv libopus alsa-lib gtk+3 libx11 openssl pulseaudio zlib libgit2 "
 
 # libvpx-staticdev
 # aom-staticdev
 # yuv-staticdev
 # libopus-staticdev
-DEPENDS += " alsa-lib gtk+3 libx11 openssl pulseaudio zlib bindgen-cli-native clang-native pkgconfig-native yasm zip "
+DEPENDS += " alsa-lib gtk+3 libx11 openssl pulseaudio zlib bindgen-cli-native clang-native pkgconfig-native yasm zip libgit2 "
 
 # Specify the target architecture
 #TARGET_ARCH = "arm64"
