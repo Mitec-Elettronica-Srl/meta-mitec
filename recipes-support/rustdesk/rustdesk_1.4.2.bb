@@ -955,7 +955,7 @@ SRC_URI[page_size-0.6.0.sha256sum] = "30d5b2194ed13191c1999ae0704b7839fb18384fa2
 SRC_URI[gethostname-0.3.0.sha256sum] = "bb65d4ba3173c56a500b555b532f72c42e8d1fe64962b518897f8959fae2c177"
 SRC_URI[winapi-wsapoll-0.1.2.sha256sum] = "1eafc5f679c576995526e81635d0cf9695841736712b4e892f87abbe6fed3f28"
 SRC_URI[bitmask-enum-2.2.4.sha256sum] = "afb15541e888071f64592c0b4364fdff21b7cb0a247f984296699351963a8721"
-#SRC_URI[block2-0.2.0-alpha.6.sha256sum] = ""
+SRC_URI[block2-0.2.0-alpha.6.sha256sum] = "8dd9e63c1744f755c2f60332b88de39d341e5e86239014ad839bd71c106dec42"
 
 SRC_URI[ab_glyph-0.2.31.sha256sum] = "e074464580a518d16a7126262fffaaa47af89d4099d4cb403f8ed938ba12ee7d"
 SRC_URI[ab_glyph_rasterizer-0.1.10.sha256sum] = "366ffbaa4442f4684d91e2cd7c5ea7c4ed8add41959a31447066e279e432b618"
