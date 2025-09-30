@@ -456,6 +456,7 @@ SRC_URI += " \
     crate://crates.io/num_threads/0.1.7 \
     crate://crates.io/objc/0.2.7 \
     crate://crates.io/objc-foundation/0.1.1 \
+    crate://crates.io/objc-sys/0.2.0-beta.2 \
     crate://crates.io/objc-sys/0.3.5 \
     crate://crates.io/objc2/0.3.0-beta.2 \
     crate://crates.io/objc2/0.5.2 \
@@ -1416,6 +1417,7 @@ SRC_URI[num_enum_derive-0.5.11.sha256sum] = "dcbff9bc912032c62bf65ef1d5aea88983b
 SRC_URI[num_threads-0.1.7.sha256sum] = "5c7398b9c8b70908f6371f47ed36737907c87c52af34c268fed0bf0ceb92ead9"
 SRC_URI[objc-0.2.7.sha256sum] = "915b1b472bc21c53464d6c8461c9d3af805ba1ef837e1cac254428f4a77177b1"
 SRC_URI[objc-foundation-0.1.1.sha256sum] = "1add1b659e36c9607c7aab864a76c7a4c2760cd0cd2e120f3fb8b952c7e22bf9"
+SRC_URI[objc-sys-0.2.0-beta.2.sha256sum] = "df3b9834c1e95694a05a828b59f55fa2afec6288359cda67146126b3f90a55d7"
 SRC_URI[objc-sys-0.3.5.sha256sum] = "cdb91bdd390c7ce1a8607f35f3ca7151b65afc0ff5ff3b34fa350f7d7c7e4310"
 SRC_URI[objc2-0.5.2.sha256sum] = "46a785d4eeff09c14c487497c162e92766fbb3e4059a71840cecc03d9a50b804"
 SRC_URI[objc2-app-kit-0.2.2.sha256sum] = "e4e89ad9e3d7d297152b17d39ed92cd50ca8063a89a9fa569046d41568891eff"
