@@ -941,6 +941,7 @@ SRC_URI += " \
     crate://crates.io/libsamplerate-sys/0.1.12 \
     crate://crates.io/page_size/0.6.0 \
     crate://crates.io/gethostname/0.3.0 \
+    crate://crates.io/winapi-wsapoll/0.1.2 \
 "
 
 SRC_URI[flutter_rust_bridge-1.80.1.sha256sum] = "fd0305ebc9f097d9826530a55fc2acd63222e912c663f7adce3ab641ecc0f346"
@@ -950,6 +951,7 @@ SRC_URI[samplerate-0.2.4.sha256sum] = "e032b2b24715c4f982f483ea3abdb3c9ba444d9f6
 SRC_URI[libsamplerate-sys-0.1.12.sha256sum] = "28853b399f78f8281cd88d333b54a63170c4275f6faea66726a2bea5cca72e0d"
 SRC_URI[page_size-0.6.0.sha256sum] = "30d5b2194ed13191c1999ae0704b7839fb18384fa22e49b57eeaa97d79ce40da"
 SRC_URI[gethostname-0.3.0.sha256sum] = "bb65d4ba3173c56a500b555b532f72c42e8d1fe64962b518897f8959fae2c177"
+SRC_URI[winapi-wsapoll-0.1.2.sha256sum] = "1eafc5f679c576995526e81635d0cf9695841736712b4e892f87abbe6fed3f28"
 
 SRC_URI[ab_glyph-0.2.31.sha256sum] = "e074464580a518d16a7126262fffaaa47af89d4099d4cb403f8ed938ba12ee7d"
 SRC_URI[ab_glyph_rasterizer-0.1.10.sha256sum] = "366ffbaa4442f4684d91e2cd7c5ea7c4ed8add41959a31447066e279e432b618"
