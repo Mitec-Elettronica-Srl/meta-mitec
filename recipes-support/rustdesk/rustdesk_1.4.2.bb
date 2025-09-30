@@ -1867,6 +1867,7 @@ DEPENDS += " alsa-lib gtk+3 libx11 openssl pulseaudio zlib bindgen-cli-native cl
 # Specify the target architecture
 #TARGET_ARCH = "arm64"
 
+do_compile[network] = "1"
 do_compile[env] = "VCPKG=${S}/vcpkg"
 
 FILES:${PN} += " \
