@@ -1935,7 +1935,13 @@ DEPENDS += " alsa-lib gtk+3 libx11 openssl pulseaudio zlib bindgen-cli-native cl
 #TARGET_ARCH = "arm64"
 
 do_compile[network] = "1"
-do_compile[env] = "VCPKG=${S}/vcpkg"
+
+# maybe populate SODIUM_LIB_DIR ?
+do_compile[env] = " \
+    VCPKG=${S}/vcpkg \
+    SODIUM_SHARED=1 \
+    SODIUM_USE_PKG_CONFIG=1 \
+"
 
 FILES:${PN} += " \
     ${libdir}/libsciter-gtk.so \
