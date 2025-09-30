@@ -907,6 +907,7 @@ SRC_URI += " \
     crate://crates.io/x11/2.21.0 \
     crate://crates.io/x11-clipboard/0.9.2 \
     crate://crates.io/x11-dl/2.21.0 \
+    crate://crates.io/x11rb/0.12.0 \
     crate://crates.io/x11rb/0.13.1 \
     crate://crates.io/x11rb-protocol/0.13.1 \
     crate://crates.io/xattr/1.4.0 \
@@ -1823,7 +1824,9 @@ SRC_URI[x11-2.19.0.sha256sum] = "8099e1f0f4797830958b078e98e771fc9ca5591ea50e233
 SRC_URI[x11-2.21.0.sha256sum] = "502da5464ccd04011667b11c435cb992822c2c0dbde1770c988480d312a0db2e"
 SRC_URI[x11-clipboard-0.9.2.sha256sum] = "b98785a09322d7446e28a13203d2cae1059a0dd3dfb32cb06d0a225f023d8286"
 SRC_URI[x11-dl-2.21.0.sha256sum] = "38735924fedd5314a6e548792904ed8c6de6636285cb9fec04d5b1db85c1516f"
+#SRC_URI[x11rb-0.12.0.sha256sum] = ""
 SRC_URI[x11rb-0.13.1.sha256sum] = "5d91ffca73ee7f68ce055750bf9f6eca0780b8c85eff9bc046a3b0da41755e12"
+SRC_URI[x11rb-protocol-0.12.0.sha256sum] = "82d6c3f9a0fb6701fab8f6cea9b0c0bd5d6876f1f89f7fada07e558077c344bc"
 SRC_URI[x11rb-protocol-0.13.1.sha256sum] = "ec107c4503ea0b4a98ef47356329af139c0a4f7750e621cf2973cd3385ebcb3d"
 SRC_URI[xattr-1.4.0.sha256sum] = "e105d177a3871454f754b33bb0ee637ecaaac997446375fd3e5d43a2ed00c909"
 SRC_URI[xcursor-0.3.10.sha256sum] = "bec9e4a500ca8864c5b47b8b482a73d62e4237670e5b5f1d6b9e3cae50f28f2b"
