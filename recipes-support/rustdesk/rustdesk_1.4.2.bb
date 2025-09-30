@@ -949,6 +949,7 @@ SRC_URI += " \
     crate://crates.io/threadpool/1.8.1 \
     crate://crates.io/build-target/0.4.0 \
     crate://crates.io/allo-isolate/0.1.25 \
+    crate://crates.io/dart-sys/4.1.5 \
 "
 
 SRC_URI[flutter_rust_bridge-1.80.1.sha256sum] = "fd0305ebc9f097d9826530a55fc2acd63222e912c663f7adce3ab641ecc0f346"
@@ -966,6 +967,7 @@ SRC_URI[os_info-3.8.2.sha256sum] = "ae99c7fa6dd38c7cafe1ec085e804f8f555a2f8659b0
 SRC_URI[threadpool-1.8.1.sha256sum] = "d050e60b33d41c19108b32cea32164033a9013fe3b46cbd4457559bfbf77afaa"
 SRC_URI[build-target-0.4.0.sha256sum] = "832133bbabbbaa9fbdba793456a2827627a7d2b8fb96032fa1e7666d7895832b"
 SRC_URI[allo-isolate-0.1.25.sha256sum] = "97b6d794345b06592d0ebeed8e477e41b71e5a0a49df4fc0e4184d5938b99509"
+SRC_URI[dart-sys-4.1.5.sha256sum] = "57967e4b200d767d091b961d6ab42cc7d0cc14fe9e052e75d0d3cf9eb732d895"
 
 SRC_URI[ab_glyph-0.2.31.sha256sum] = "e074464580a518d16a7126262fffaaa47af89d4099d4cb403f8ed938ba12ee7d"
 SRC_URI[ab_glyph_rasterizer-0.1.10.sha256sum] = "366ffbaa4442f4684d91e2cd7c5ea7c4ed8add41959a31447066e279e432b618"
