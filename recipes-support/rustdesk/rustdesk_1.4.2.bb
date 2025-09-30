@@ -574,7 +574,7 @@ SRC_URI += " \
     crate://crates.io/raw-window-handle/0.6.2 \
     crate://crates.io/rayon/1.10.0 \
     crate://crates.io/rayon-core/1.12.1 \
-    crate://crates.io/rdev/0.5.0-2 \
+    crate://crates.io/rdev/0.5.0 \
     crate://crates.io/rdrand/0.4.0 \
     crate://crates.io/redox_syscall/0.4.1 \
     crate://crates.io/redox_syscall/0.5.2 \
