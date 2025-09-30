@@ -946,6 +946,7 @@ SRC_URI += " \
     crate://crates.io/bitmask-enum/2.2.4 \
     crate://crates.io/block2/0.2.0-alpha.6 \
     crate://crates.io/os_info/3.8.2 \
+    crate://crates.io/threadpool/1.8.1 \
 "
 
 SRC_URI[flutter_rust_bridge-1.80.1.sha256sum] = "fd0305ebc9f097d9826530a55fc2acd63222e912c663f7adce3ab641ecc0f346"
@@ -960,6 +961,7 @@ SRC_URI[bitmask-enum-2.2.4.sha256sum] = "afb15541e888071f64592c0b4364fdff21b7cb0
 SRC_URI[block2-0.2.0-alpha.6.sha256sum] = "8dd9e63c1744f755c2f60332b88de39d341e5e86239014ad839bd71c106dec42"
 SRC_URI[objc2-0.3.0-beta.2.sha256sum] = "a49f420f16c8814efdcd6b4258664de9d9920cbc26b6f95d034a1ca9850ccc2c"
 SRC_URI[os_info-3.8.2.sha256sum] = "ae99c7fa6dd38c7cafe1ec085e804f8f555a2f8659b0dbe03f1f9963a9b51092"
+SRC_URI[threadpool-1.8.1.sha256sum] = "d050e60b33d41c19108b32cea32164033a9013fe3b46cbd4457559bfbf77afaa"
 
 SRC_URI[ab_glyph-0.2.31.sha256sum] = "e074464580a518d16a7126262fffaaa47af89d4099d4cb403f8ed938ba12ee7d"
 SRC_URI[ab_glyph_rasterizer-0.1.10.sha256sum] = "366ffbaa4442f4684d91e2cd7c5ea7c4ed8add41959a31447066e279e432b618"
