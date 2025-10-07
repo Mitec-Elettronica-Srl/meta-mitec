@@ -146,7 +146,9 @@ FILES:${PN}-src += "\
 "
 
 FILES:${PN}-systemd = "\
-  ${base_libdir}/systemd/* \
+  ${systemd_unitdir}/systemd/system/softether-vpnbridge.service \
+  ${systemd_unitdir}/systemd/system/softether-vpnserver.service \
+  ${systemd_unitdir}/systemd/system/softether-vpnclient.service \
 "
 
 #FILES:${PN}-dev_remnove = "/usr/lib/libmayaqua.so"
