@@ -33,6 +33,9 @@ EXTRA_OECMAKE += "\
 "
 
 do_install:append() {
+  # we have merged usr
+  rm -rf ${D}/lib
+
   # install service files
 	install -d ${D}${systemd_unitdir}/system
 	install -c -m 0644 ${S}/systemd/softether-vpnbridge.service ${D}${systemd_unitdir}/system
