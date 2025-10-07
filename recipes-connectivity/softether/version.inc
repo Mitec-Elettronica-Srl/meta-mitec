@@ -5,7 +5,7 @@
 
 SRCREV = "10d6efcc5e3329e5a959a99c6e939648f41121bf"
 
-SRC += " \
+SRC_URI += " \
     file://0001-BLAKE2-use-Yocto-flags-dont-try-to-run-the-tests.patch \
     file://0002-Cedar-hack-CMakeLists.txt.patch \
 "
