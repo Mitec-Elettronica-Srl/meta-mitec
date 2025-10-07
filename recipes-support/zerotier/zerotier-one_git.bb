@@ -37,7 +37,6 @@ LIC_FILES_CHKSUM = " \
     file://attic/historic/anode/LICENSE.txt;md5=d32239bcb673463ab874e80d47fae504 \
     file://debian/copyright;md5=f4a6ffbe72aad9cedd587bcb18904813 \
     file://ext/http-parser/LICENSE-MIT;md5=20d989143ee48a92dacde4f06bbcb59a \
-    file://ext/json/LICENSE.MIT;md5=f8a8f918f1513404c8366d7a63ab6d97 \
     file://ext/libnatpmp/LICENSE;md5=63b8bf0fd09f4909d823a94c6e6fc06b \
     file://ext/miniupnpc/LICENSE;md5=4a95d5317ee6dac993b7598848c72c1e \
 "
@@ -75,6 +74,7 @@ do_install() {
 
 }
 
+inherit cargo
 inherit systemd
 SYSTEMD_SERVICE_${PN} = "zerotier-one.service"
 
