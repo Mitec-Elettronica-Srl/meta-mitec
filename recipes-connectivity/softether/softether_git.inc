@@ -39,7 +39,7 @@ do_install:append() {
   install -c -m 0644 ${S}/systemd/softether-vpnserver.service ${D}${systemd_unitdir}/system
 }
 
-FILES:${PN} += "\
+FILES:${PN} += " \
   ${bindir}/vpnbridge \
   ${libexecdir}/softether/vpnbridge/vpnbridge \
   ${libexecdir}/softether/vpnbridge/hamcore.se2 \
