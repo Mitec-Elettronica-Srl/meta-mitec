@@ -32,6 +32,15 @@ EXTRA_OECMAKE += "\
   -DCMAKE_SKIP_RPATH=ON \
 "
 
+do_install:append() {
+  ${systemd_unitdir}/system/softether-vpnserver.service
+
+  install -d ${D}${systemd_unitdir}/system
+	install -c -m 0644 ${S}/systemd/softether-vpnbridge.service ${D}${systemd_unitdir}/system
+  install -c -m 0644 ${S}/systemd/softether-vpnclient.service ${D}${systemd_unitdir}/system
+  install -c -m 0644 ${S}/systemd/softether-vpnserver.service ${D}${systemd_unitdir}/system
+}
+
 FILES:${PN} += "\
   ${bindir}/vpnbridge \
   ${libexecdir}/softether/vpnbridge/vpnbridge \
@@ -49,3 +58,5 @@ FILES:${PN} += "\
   ${libexecdir}/softether/vpnserver/hamcore.se2 \
   ${systemd_unitdir}/system/softether-vpnserver.service \
 "
+
+SYSTEMD_AUTO_ENABLE = "disable"
