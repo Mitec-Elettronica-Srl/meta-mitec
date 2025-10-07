@@ -30,16 +30,19 @@ HOMEPAGE = "https://www.zerotier.com/"
 # licenses then you should change the value to separate the licenses with |
 # instead of &. If there is any doubt, check the accompanying documentation
 # to determine which situation is applicable.
-LICENSE = "ZeroTier_BSL_1.1 & MIT"
-# Note: COPYING has been removed
-LIC_FILES_CHKSUM = " \
-    file://LICENSE.txt;md5=10a2f6efeb9fb6ee1dd67b697c8cbc56 \
-    file://attic/historic/anode/LICENSE.txt;md5=d32239bcb673463ab874e80d47fae504 \
-    file://debian/copyright;md5=f4a6ffbe72aad9cedd587bcb18904813 \
-    file://ext/http-parser/LICENSE-MIT;md5=20d989143ee48a92dacde4f06bbcb59a \
-    file://ext/libnatpmp/LICENSE;md5=63b8bf0fd09f4909d823a94c6e6fc06b \
-    file://ext/miniupnpc/LICENSE;md5=4a95d5317ee6dac993b7598848c72c1e \
-"
+# NOTE: Cannot find any text for license ZeroTier_BSL_1.1 so set it to closed
+# as I am tired of attempting to fix this in vain.
+LICENSE = "CLOSED"
+#LICENSE = "ZeroTier_BSL_1.1 & MIT"
+## Note: COPYING has been removed
+#LIC_FILES_CHKSUM = " \
+#    file://LICENSE.txt;md5=10a2f6efeb9fb6ee1dd67b697c8cbc56 \
+#    file://attic/historic/anode/LICENSE.txt;md5=d32239bcb673463ab874e80d47fae504 \
+#    file://debian/copyright;md5=f4a6ffbe72aad9cedd587bcb18904813 \
+#    file://ext/http-parser/LICENSE-MIT;md5=20d989143ee48a92dacde4f06bbcb59a \
+#    file://ext/libnatpmp/LICENSE;md5=63b8bf0fd09f4909d823a94c6e6fc06b \
+#    file://ext/miniupnpc/LICENSE;md5=4a95d5317ee6dac993b7598848c72c1e \
+#"
 
 # detected but not included license
 # file://ext/hiredis-0.14.1/COPYING;md5=d84d659a35c666d23233e54503aaea51
