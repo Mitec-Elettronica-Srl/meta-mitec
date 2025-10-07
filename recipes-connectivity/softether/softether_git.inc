@@ -32,8 +32,11 @@ EXTRA_OECMAKE += "\
   -DCMAKE_SKIP_RPATH=ON \
 "
 
-do_install:append() {
-  install -d ${D}${systemd_unitdir}/system
+do_install() {
+	oe_runmake install
+  
+  # install service files
+	install -d ${D}${systemd_unitdir}/system
 	install -c -m 0644 ${S}/systemd/softether-vpnbridge.service ${D}${systemd_unitdir}/system
   install -c -m 0644 ${S}/systemd/softether-vpnclient.service ${D}${systemd_unitdir}/system
   install -c -m 0644 ${S}/systemd/softether-vpnserver.service ${D}${systemd_unitdir}/system
