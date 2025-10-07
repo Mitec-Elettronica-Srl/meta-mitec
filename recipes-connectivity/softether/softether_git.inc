@@ -16,8 +16,7 @@ do_compile[depends] = "softether-hamcorebuilder-native:do_populate_sysroot"
 #DEPENDS += " zlib ncurses softether-hamcorebuilder-native virtual/libiconv readline openssl "
 DEPENDS += " zlib ncurses virtual/libiconv readline openssl libsodium"
 
-#RDEPENDS:${PN} += " virtual/libiconv readline openssl "
-RDEPENDS:${PN} += " readline openssl glibc-gconv-utf-16 glibc-gconv-euc-jp systemd "
+RDEPENDS:${PN} += " virtual/libiconv readline openssl glibc-locale glibc-gconv-utf-16 glibc-gconv-euc-jp systemd "
 
 # !!!! Make sure that in your image recipe at least you add !!!!
 # glibc-gconv-utf-16
@@ -30,25 +29,8 @@ RDEPENDS:${PN} += " readline openssl glibc-gconv-utf-16 glibc-gconv-euc-jp syste
 EXTRA_OECMAKE += "\
   -DCMAKE_SKIP_RPATH=ON \
 "
-# I also tried to get rid of rpaths with something like this:
-# find ${S}/build/vpnclient -type f -print0 | xargs -0 chrpath --delete
-# but cmake magic requires to have rpaths and is unhappy without them
-# it does:
-#   file(RPATH_CHECK
-#         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/libexec/softether/vpnclient/vpnclient"
-#         RPATH "/usr/lib")
 
-# this RDEPENDS does not quite seem to work for some reason
-# I added glibc-gconv-utf-16 to my image recipe, which seems to work
-# otherwise you get funny/misleading errors like these:
-# -- Alert: SoftEther VPN Kernel --
-# String Library Init Failed.
-# Please check your locale settings and iconv() libraries.
-RDEPENDS:pn_${PN} += "glibc-locale glibc-gconv-utf-16 glibc-gconv-euc-jp"
-
-#INSANE_SKIP:${PN} = "useless-rpaths"
-
-FILES:${PN} = "\
+FILES:${PN} += "\
   ${bindir}/vpnbridge \
   ${libexecdir}/softether/vpnbridge/vpnbridge \
   ${libexecdir}/softether/vpnbridge/hamcore.se2 \
@@ -65,5 +47,3 @@ FILES:${PN} = "\
   ${libexecdir}/softether/vpnserver/hamcore.se2 \
   ${systemd_unitdir}/systemd/system/softether-vpnserver.service \
 "
-
-#INSANE_SKIP:${PN}-vpnbridge = "useless-rpaths"
