@@ -74,7 +74,7 @@ do_install() {
 
 }
 
-inherit cargo
+inherit cargo_common
 inherit systemd
 SYSTEMD_SERVICE_${PN} = "zerotier-one.service"
 
