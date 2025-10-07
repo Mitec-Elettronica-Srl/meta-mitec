@@ -20,7 +20,7 @@ do_compile[depends] = "softether-hamcorebuilder-native:do_populate_sysroot"
 DEPENDS += " zlib ncurses virtual/libiconv readline openssl libsodium"
 
 #RDEPENDS:${PN} += " virtual/libiconv readline openssl "
-RDEPENDS:${PN} += " readline openssl glibc-gconv-utf-16 glibc-gconv-euc-jp"
+RDEPENDS:${PN} += " readline openssl glibc-gconv-utf-16 glibc-gconv-euc-jp systemd "
 
 # !!!! Make sure that in your image recipe at least you add !!!!
 # glibc-gconv-utf-16
@@ -47,7 +47,6 @@ PACKAGES += " \
    ${PN}-vpncmd \
    ${PN}-vpnserver \
    ${PN}-libs \
-   ${PN}-systemd \
 "
 # ${PN}-dbg 
 # ${PN}-list-cpu-features
@@ -78,6 +77,7 @@ FILES:${PN}-vpnbridge = "\
   ${bindir}/vpnbridge \
   ${libexecdir}/softether/vpnbridge/vpnbridge \
   ${libexecdir}/softether/vpnbridge/hamcore.se2 \
+  ${systemd_unitdir}/systemd/system/softether-vpnbridge.service \
 "
 
 RDEPENDS:pn_${PN}-vpnbridge = "FILES:${PN}-libs"
@@ -88,6 +88,7 @@ FILES:${PN}-vpnclient = "\
   ${bindir}/vpnclient \
   ${libexecdir}/softether/vpnclient/vpnclient \
   ${libexecdir}/softether/vpnclient/hamcore.se2 \
+  ${systemd_unitdir}/systemd/system/softether-vpnclient.service \
 "
 
 RDEPENDS:pn_${PN}-vpnclient = "FILES:${PN}-libs"
@@ -108,6 +109,7 @@ FILES:${PN}-vpnserver = "\
   ${bindir}/vpnserver \
   ${libexecdir}/softether/vpnserver/vpnserver \
   ${libexecdir}/softether/vpnserver/hamcore.se2 \
+  ${systemd_unitdir}/systemd/system/softether-vpnserver.service \
 "
 RDEPENDS:pn_${PN}-vpnserver = "FILES:${PN}-libs"
 
@@ -143,12 +145,6 @@ FILES:${PN}-dbg += "\
 
 FILES:${PN}-src += "\
   ${exec_prefix}/src/debug/* \
-"
-
-FILES:${PN}-systemd = "\
-  ${systemd_unitdir}/systemd/system/softether-vpnbridge.service \
-  ${systemd_unitdir}/systemd/system/softether-vpnserver.service \
-  ${systemd_unitdir}/systemd/system/softether-vpnclient.service \
 "
 
 #FILES:${PN}-dev_remnove = "/usr/lib/libmayaqua.so"
