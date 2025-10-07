@@ -16,7 +16,8 @@ do_compile[depends] = "softether-hamcorebuilder-native:do_populate_sysroot"
 #DEPENDS += " zlib ncurses softether-hamcorebuilder-native virtual/libiconv readline openssl "
 DEPENDS += " zlib ncurses virtual/libiconv readline openssl libsodium"
 
-RDEPENDS:${PN} += " virtual/libiconv readline openssl glibc-locale glibc-gconv-utf-16 glibc-gconv-euc-jp systemd "
+# ERROR: Nothing RPROVIDES 'glibc-locale'
+RDEPENDS:${PN} += " virtual/libiconv readline openssl glibc-gconv-utf-16 glibc-gconv-euc-jp systemd "
 
 # !!!! Make sure that in your image recipe at least you add !!!!
 # glibc-gconv-utf-16
