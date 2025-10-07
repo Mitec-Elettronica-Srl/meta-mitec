@@ -61,10 +61,9 @@ S = "${WORKDIR}/git"
 # NOTE: spec file indicates the license may be "ZeroTier BSL 1.1"
 
 EXTRA_OEMAKE = " \
-                DESTDIR=${D} \
-                ZT_DEBUG=1 \
-                STRIP=echo \
-                "
+    DESTDIR=${D} \
+    STRIP=echo \
+"
 
 do_install() {
 	oe_runmake install
@@ -86,9 +85,6 @@ BASEDEPENDS:append = " cargo-native"
 DEPENDS:append:class-target = " rust-native ${RUSTLIB_DEP}"
 DEPENDS:append:class-nativesdk = " rust-native ${RUSTLIB_DEP}"
 DEPENDS:append:class-native = " rust-native"
-
-# Enable build separation
-B = "${WORKDIR}/build"
 
 # In case something fails in the build process, give a bit more feedback on
 # where the issue occured
