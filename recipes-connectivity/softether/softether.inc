@@ -18,4 +18,4 @@ S = "${WORKDIR}/git"
 inherit cmake pkgconfig
 
 EXTRA_OECMAKE:append:class-target = " ${@bb.utils.contains("TUNE_FEATURES", "neon", "-DBUILD_BLAKE2_WITH_NEON=yes", "", d)}"
-EXTRA_OECMAKE:append = " -DCMAKE_C_FLAGS='${@d.getVar('CFLAGS', True)} -msse2' -DCMAKE_CXX_FLAGS='${@d.getVar('CXXFLAGS', True)} -msse2' "
+#EXTRA_OECMAKE:append = " -DCMAKE_C_FLAGS='${@d.getVar('CFLAGS', True)} -msse2' -DCMAKE_CXX_FLAGS='${@d.getVar('CXXFLAGS', True)} -msse2' "
