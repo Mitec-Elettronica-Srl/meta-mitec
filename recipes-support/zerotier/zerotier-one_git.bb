@@ -65,6 +65,8 @@ EXTRA_OEMAKE = " \
     STRIP=echo \
 "
 
+do_compile[network] = "1"
+
 do_install() {
 	oe_runmake install
     	# install service file
