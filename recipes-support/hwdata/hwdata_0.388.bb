@@ -22,7 +22,7 @@ do_install() {
     oe_runmake install DESTDIR=${D}
 }
 
-FILES:${PN} = "${libdir}/* \
+FILES:${PN} += "${libdir}/* \
                ${datadir}/* "
 
 BBCLASSEXTEND += "native"
