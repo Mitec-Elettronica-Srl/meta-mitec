@@ -71,10 +71,38 @@ do_install() {
     	# install service file
 	install -d ${D}${systemd_unitdir}/system
 	install -c -m 0644 ${S}/debian/zerotier-one.service ${D}${systemd_unitdir}/system
-
 }
 
 inherit cargo_common
+inherit rust-target-config
+
+# the binary we will use
+CARGO = "cargo"
+
+# We need cargo to compile for the target
+BASEDEPENDS:append = " cargo-native"
+
+# Ensure we get the right rust variant
+DEPENDS:append:class-target = " rust-native ${RUSTLIB_DEP}"
+DEPENDS:append:class-nativesdk = " rust-native ${RUSTLIB_DEP}"
+DEPENDS:append:class-native = " rust-native"
+
+# Enable build separation
+B = "${WORKDIR}/build"
+
+# In case something fails in the build process, give a bit more feedback on
+# where the issue occured
+export RUST_BACKTRACE = "1"
+
+RUSTFLAGS ??= ""
+BUILD_MODE = "${@['--release', ''][d.getVar('DEBUG_BUILD') == '1']}"
+# --frozen flag will prevent network access (which is required since only
+# the do_fetch step is authorized to access network)
+# and will require an up to date Cargo.lock file.
+# This force the package being built to already ship a Cargo.lock, in the end
+# this is what we want, at least, for reproducibility of the build.
+CARGO_BUILD_FLAGS = "-v --frozen --target ${RUST_HOST_SYS} ${BUILD_MODE} --manifest-path=${CARGO_MANIFEST_PATH}"
+
 inherit systemd
 SYSTEMD_SERVICE_${PN} = "zerotier-one.service"
 
