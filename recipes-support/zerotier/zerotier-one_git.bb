@@ -60,6 +60,7 @@ SRCREV = "7b7d39becc4a775d33e8c0f673856fb91dea7f31"
 S = "${WORKDIR}/git"
 
 DEPENDS += " bindgen-cli-native clang-native pkgconfig-native "
+DEPENDS += " openssl "
 
 # NOTE: spec file indicates the license may be "ZeroTier BSL 1.1"
 
