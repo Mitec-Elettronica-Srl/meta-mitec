@@ -11,11 +11,10 @@ SECTION = "net"
 PRIORITY = "optional"
 LICENSE = "GPL-2.0-only"
 
-SRC_URI = "gitsm://github.com/SoftEtherVPN/SoftEtherVPN.git;branch=master;protocol=https \
-"
+SRC_URI = "gitsm://github.com/SoftEtherVPN/SoftEtherVPN.git;protocol=https;nobranch=1"
 
 S = "${WORKDIR}/git"
 
 inherit cmake pkgconfig
 
-EXTRA_OECMAKE:append:class-target:arm = " ${@bb.utils.contains("TUNE_FEATURES", "neon", "-DBUILD_BLAKE2_WITH_NEON=yes", "", d)}"
+EXTRA_OECMAKE:append:class-target:arm = " ${@bb.utils.contains("TUNE_FEATURES", "neon", "-DBUILD_BLAKE2_WITH_NEON=no", "", d)}"
