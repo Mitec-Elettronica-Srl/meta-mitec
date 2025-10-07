@@ -83,7 +83,7 @@ DEPENDS:append:class-native = " rust-native"
 export RUST_BACKTRACE = "1"
 
 RUSTFLAGS ??= ""
-BUILD_MODE = "${@['--release', ''][d.getVar('DEBUG_BUILD') == '1']}"
+
 # --frozen flag will prevent network access (which is required since only
 # the do_fetch step is authorized to access network)
 # and will require an up to date Cargo.lock file.
@@ -116,6 +116,8 @@ do_install() {
 
 inherit systemd
 SYSTEMD_SERVICE_${PN} = "zerotier-one.service"
+
+FILES:${PN} += "${systemd_unitdir}/system/zerotier-one.service"
 
 # Do not enable by default. zerotier requires manual setup anyway
 # Before setting up systemctl enable zerotier-one ; systemctl start zerotier-one
