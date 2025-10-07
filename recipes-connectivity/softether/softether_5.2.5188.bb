@@ -3,5 +3,5 @@
 # SPDX-License-Identifier: MIT
 #
 
-require version_${PV}.inc
+require version.inc
 require softether_git.inc

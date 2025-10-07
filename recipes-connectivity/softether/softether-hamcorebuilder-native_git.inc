@@ -10,9 +10,6 @@ require softether.inc
 
 inherit native
 
-# only inherit sca if set in DISTRO_FEATURES
-# inherit ${@bb.utils.contains('DISTRO_FEATURES', 'sca', 'sca', '', d)}
-
 # in case we have forcecompile defined in DISTRO_FEATURES include a file, which enforces compile -> sca
 require ${@ bb.utils.contains("DISTRO_FEATURES", "forcecompile", "conf/distro/include/force-compile.inc" , "", d)}
 

@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MIT
 #
 
-require version_${PV}.inc
+require version.inc
 require softether-hamcorebuilder-native_git.inc
 
 #DEPENDS += "libsodium-native pkgconfig-native"
