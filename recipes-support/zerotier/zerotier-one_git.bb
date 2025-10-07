@@ -64,15 +64,6 @@ DEPENDS += " openssl "
 
 # NOTE: spec file indicates the license may be "ZeroTier BSL 1.1"
 
-do_compile[network] = "1"
-
-do_install() {
-	oe_runmake install
-    	# install service file
-	install -d ${D}${systemd_unitdir}/system
-	install -c -m 0644 ${S}/debian/zerotier-one.service ${D}${systemd_unitdir}/system
-}
-
 inherit cargo_common
 inherit rust-target-config
 
@@ -105,6 +96,22 @@ EXTRA_OEMAKE = " \
     STRIP=echo \
     ZT_CARGO_FLAGS='${CARGO_BUILD_FLAGS}' \
 "
+
+do_compile[network] = "1"
+
+do_compile:prepend() {
+    export RUSTFLAGS="${RUSTFLAGS}"
+    bbnote "Using rust targets <from ${RUST_TARGET_PATH}"
+    bbnote "cargo = $(which ${CARGO})"
+    bbnote "${CARGO} build ${CARGO_BUILD_FLAGS} $@"
+}
+
+do_install() {
+	oe_runmake install
+    	# install service file
+	install -d ${D}${systemd_unitdir}/system
+	install -c -m 0644 ${S}/debian/zerotier-one.service ${D}${systemd_unitdir}/system
+}
 
 inherit systemd
 SYSTEMD_SERVICE_${PN} = "zerotier-one.service"
