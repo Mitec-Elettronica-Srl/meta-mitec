@@ -89,12 +89,13 @@ BUILD_MODE = "${@['--release', ''][d.getVar('DEBUG_BUILD') == '1']}"
 # and will require an up to date Cargo.lock file.
 # This force the package being built to already ship a Cargo.lock, in the end
 # this is what we want, at least, for reproducibility of the build.
-CARGO_BUILD_FLAGS = "-v --frozen --target ${RUST_HOST_SYS} ${BUILD_MODE}"
+CARGO_BUILD_FLAGS = "--frozen"
 
 EXTRA_OEMAKE = " \
     DESTDIR=${D} \
     STRIP=echo \
-    ZT_CARGO_FLAGS='${CARGO_BUILD_FLAGS}' \
+    CARGO_BUILD_FLAGS='${CARGO_BUILD_FLAGS}' \
+    RUST_HOST_SYS=${RUST_HOST_SYS} \
 "
 
 do_compile[network] = "1"
