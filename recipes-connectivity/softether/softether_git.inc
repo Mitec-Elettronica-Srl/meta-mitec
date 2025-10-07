@@ -34,16 +34,16 @@ FILES:${PN} += "\
   ${bindir}/vpnbridge \
   ${libexecdir}/softether/vpnbridge/vpnbridge \
   ${libexecdir}/softether/vpnbridge/hamcore.se2 \
-  ${systemd_unitdir}/systemd/system/softether-vpnbridge.service \
+  ${systemd_unitdir}/system/softether-vpnbridge.service \
   ${bindir}/vpnclient \
   ${libexecdir}/softether/vpnclient/vpnclient \
   ${libexecdir}/softether/vpnclient/hamcore.se2 \
-  ${systemd_unitdir}/systemd/system/softether-vpnclient.service \
+  ${systemd_unitdir}/system/softether-vpnclient.service \
   ${bindir}/vpncmd \
   ${libexecdir}/softether/vpncmd/vpncmd \
   ${libexecdir}/softether/vpncmd/hamcore.se2 \
   ${bindir}/vpnserver \
   ${libexecdir}/softether/vpnserver/vpnserver \
   ${libexecdir}/softether/vpnserver/hamcore.se2 \
-  ${systemd_unitdir}/systemd/system/softether-vpnserver.service \
+  ${systemd_unitdir}/system/softether-vpnserver.service \
 "
