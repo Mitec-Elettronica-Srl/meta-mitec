@@ -17,4 +17,4 @@ S = "${WORKDIR}/git"
 
 inherit cmake pkgconfig
 
-EXTRA_OECMAKE:append:class-target:arm = " ${@bb.utils.contains("TUNE_FEATURES", "neon", "-DBUILD_BLAKE2_WITH_NEON=no", "", d)}"
+EXTRA_OECMAKE:append:class-target = " ${@bb.utils.contains("TUNE_FEATURES", "neon", "-DBUILD_BLAKE2_WITH_NEON=yes", "", d)}"
