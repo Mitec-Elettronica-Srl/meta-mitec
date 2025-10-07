@@ -1,0 +1,37 @@
+From eaddfb3f4f78acdf83ee980bea591b007a0997b5 Mon Sep 17 00:00:00 2001
+From: Robert Berger <Robert.Berger@ReliableEmbeddedSystems.com>
+Date: Mon, 24 Jun 2024 20:37:49 +0000
+Subject: [PATCH] Cedar: hack CMakeLists.txt
+
+Upstream-Status: Inappropriate [res specific]
+Signed-off-by: Robert Berger <Robert.Berger@ReliableEmbeddedSystems.com>
+---
+ src/Cedar/CMakeLists.txt | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+
+diff --git a/src/Cedar/CMakeLists.txt b/src/Cedar/CMakeLists.txt
+index 7818d79..451335c 100644
+--- a/src/Cedar/CMakeLists.txt
++++ b/src/Cedar/CMakeLists.txt
+@@ -21,10 +21,15 @@ set_target_properties(cedar
+ 
+ target_link_libraries(cedar PUBLIC mayaqua)
+ 
+-cmake_host_system_information(RESULT HAS_SSE2 QUERY HAS_SSE2)
++if(BUILD_BLAKE2_WITH_NEON)
++  set(BLAKE2_SRC_PATH ${TOP_DIRECTORY}/3rdparty/BLAKE2/neon)
++  set(BLAKE2_SRC ${BLAKE2_SRC_PATH}/blake2s.c)
++else()
++  cmake_host_system_information(RESULT HAS_SSE2 QUERY HAS_SSE2)
+ 
+-set(BLAKE2_SRC_PATH $<IF:$<BOOL:${HAS_SSE2}>,${TOP_DIRECTORY}/3rdparty/BLAKE2/sse,${TOP_DIRECTORY}/3rdparty/BLAKE2/ref>)
+-set(BLAKE2_SRC $<IF:$<BOOL:${HAS_SSE2}>,${BLAKE2_SRC_PATH}/blake2s.c,${BLAKE2_SRC_PATH}/blake2s-ref.c>)
++  set(BLAKE2_SRC_PATH $<IF:$<BOOL:${HAS_SSE2}>,${TOP_DIRECTORY}/3rdparty/BLAKE2/sse,${TOP_DIRECTORY}/3rdparty/BLAKE2/ref>)
++  set(BLAKE2_SRC $<IF:$<BOOL:${HAS_SSE2}>,${BLAKE2_SRC_PATH}/blake2s.c,${BLAKE2_SRC_PATH}/blake2s-ref.c>)
++endif()
+ 
+ target_include_directories(cedar PUBLIC ${BLAKE2_SRC_PATH})
+ target_sources(cedar PRIVATE ${BLAKE2_SRC})
+-- 
+2.34.1
+

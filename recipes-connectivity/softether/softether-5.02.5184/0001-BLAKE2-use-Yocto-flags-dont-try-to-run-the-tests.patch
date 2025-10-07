@@ -1,0 +1,31 @@
+From 4ab20f375ed6fc313baf6c0b3626d2794930e486 Mon Sep 17 00:00:00 2001
+From: Robert Berger <Robert.Berger@ReliableEmbeddedSystems.com>
+Date: Mon, 24 Jun 2024 19:52:37 +0000
+Subject: [PATCH] use Yocto flags, dont' try to run the tests
+
+Upstream-Status: Inappropriate [res specific]
+Signed-off-by: Robert Berger <Robert.Berger@ReliableEmbeddedSystems.com>
+---
+ neon/makefile | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/3rdparty/BLAKE2/neon/makefile b/3rdparty/BLAKE2/neon/makefile
+index de5c259..6a1a0cf 100644
+--- a/3rdparty/BLAKE2/neon/makefile
++++ b/3rdparty/BLAKE2/neon/makefile
+@@ -1,8 +1,9 @@
+-CC=gcc
+-CFLAGS=-march=armv7-a -mfpu=neon-vfpv4 -mfloat-abi=hard -O3 -I../testvectors -Wall -Wextra -std=c89 -pedantic -Wno-long-long
++#CC=gcc
++#CFLAGS=-march=armv7-a -mfpu=neon-vfpv4 -mfloat-abi=hard -O3 -I../testvectors -Wall -Wextra -std=c89 -pedantic -Wno-long-long
++CFLAGS+=-I../testvectors
+ BLAKEBINS=blake2s blake2b blake2sp blake2bp blake2xs blake2xb
+ 
+-all:		$(BLAKEBINS) check
++all:		$(BLAKEBINS)
+ 
+ blake2s:	blake2s.c blake2s-round.h blake2s-load-neon.h
+ 		$(CC) blake2s.c -o $@ $(CFLAGS) -DBLAKE2S_SELFTEST
+-- 
+2.45.1
+
