@@ -6,9 +6,6 @@
 
 require softether.inc
 
-# sca checks which apply to this recipe
-inherit sca-c-checks
-
 # only inherit sca if set in DISTRO_FEATURES
 # inherit ${@bb.utils.contains('DISTRO_FEATURES', 'sca', 'sca', '', d)}
 

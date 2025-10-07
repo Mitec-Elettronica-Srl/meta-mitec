@@ -8,9 +8,6 @@
 
 require softether.inc
 
-# sca checks which apply to this recipe
-inherit sca-c-checks
-
 inherit native
 
 # only inherit sca if set in DISTRO_FEATURES
