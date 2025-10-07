@@ -50,6 +50,7 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/files/:"
 # file://0001-systemd-fix-zerotier-hanging-on-shutdown.patch
 SRC_URI = " \
     git://github.com/zerotier/ZeroTierOne;protocol=https;nobranch=1 \
+    file://0001-Allow-overriding-the-ZT-CARGO_FLAGS-for-youcto-to-bu.patch \
 "
 
 # Modify these as desired
@@ -59,11 +60,6 @@ SRCREV = "7b7d39becc4a775d33e8c0f673856fb91dea7f31"
 S = "${WORKDIR}/git"
 
 # NOTE: spec file indicates the license may be "ZeroTier BSL 1.1"
-
-EXTRA_OEMAKE = " \
-    DESTDIR=${D} \
-    STRIP=echo \
-"
 
 do_compile[network] = "1"
 
@@ -100,6 +96,12 @@ BUILD_MODE = "${@['--release', ''][d.getVar('DEBUG_BUILD') == '1']}"
 # This force the package being built to already ship a Cargo.lock, in the end
 # this is what we want, at least, for reproducibility of the build.
 CARGO_BUILD_FLAGS = "-v --frozen --target ${RUST_HOST_SYS} ${BUILD_MODE} --manifest-path=${CARGO_MANIFEST_PATH}"
+
+EXTRA_OEMAKE = " \
+    DESTDIR=${D} \
+    STRIP=echo \
+    ZT_CARGO_FLAGS=\"${CARGO_BUILD_FLAGS}\" \
+"
 
 inherit systemd
 SYSTEMD_SERVICE_${PN} = "zerotier-one.service"

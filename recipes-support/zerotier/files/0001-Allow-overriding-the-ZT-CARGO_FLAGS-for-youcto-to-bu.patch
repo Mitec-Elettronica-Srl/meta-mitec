@@ -1,0 +1,35 @@
+From b68c31f3089155cbd3c151bafe0184e8286d44f0 Mon Sep 17 00:00:00 2001
+From: "benato.denis96@gmail.com" <benato.denis96@gmail.com>
+Date: Tue, 7 Oct 2025 11:09:43 +0200
+Subject: [PATCH] Allow overriding the ZT:CARGO_FLAGS for youcto to build a
+ non-native version
+
+---
+ make-linux.mk | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/make-linux.mk b/make-linux.mk
+index 77d3e0b1..feb720c0 100644
+--- a/make-linux.mk
++++ b/make-linux.mk
+@@ -77,7 +77,7 @@ ifeq ($(ZT_DEBUG),1)
+ 	override CFLAGS+=-Wall -Wno-deprecated -g -O -pthread $(INCLUDES) $(DEFS)
+ 	override CXXFLAGS+=-Wall -Wno-deprecated -g -O -std=c++17 -pthread $(INCLUDES) $(DEFS)
+ 	ZT_TRACE=1
+-	ZT_CARGO_FLAGS=
++	ZT_CARGO_FLAGS?=
+ 	# The following line enables optimization for the crypto code, since
+ 	# C25519 in particular is almost UNUSABLE in -O0 even on a 3ghz box!
+ node/Salsa20.o node/SHA512.o node/C25519.o node/Poly1305.o: CXXFLAGS=-Wall -O2 -g -pthread $(INCLUDES) $(DEFS)
+@@ -87,7 +87,7 @@ else
+ 	CXXFLAGS?=-O3 -fstack-protector
+ 	override CXXFLAGS+=-Wall -Wno-deprecated -std=c++17 -pthread $(INCLUDES) -DNDEBUG $(DEFS)
+ 	LDFLAGS?=-pie -Wl,-z,relro,-z,now
+-	ZT_CARGO_FLAGS=--release
++	ZT_CARGO_FLAGS?=--release
+ endif
+ 
+ ifeq ($(ZT_QNAP), 1)
+-- 
+2.47.3
+
