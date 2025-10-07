@@ -33,7 +33,7 @@ HOMEPAGE = "https://www.zerotier.com/"
 LICENSE = "ZeroTier_BSL_1.1 & MIT"
 # Note: COPYING has been removed
 LIC_FILES_CHKSUM = " \
-    file://LICENSE.txt;md5=9a913ad4fdae889b528bc6213633b24c \
+    file://LICENSE.txt;md5=10a2f6efeb9fb6ee1dd67b697c8cbc56 \
     file://attic/historic/anode/LICENSE.txt;md5=d32239bcb673463ab874e80d47fae504 \
     file://debian/copyright;md5=f4a6ffbe72aad9cedd587bcb18904813 \
     file://ext/http-parser/LICENSE-MIT;md5=20d989143ee48a92dacde4f06bbcb59a \
