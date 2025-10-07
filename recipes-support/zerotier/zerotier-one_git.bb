@@ -31,15 +31,16 @@ HOMEPAGE = "https://www.zerotier.com/"
 # instead of &. If there is any doubt, check the accompanying documentation
 # to determine which situation is applicable.
 LICENSE = "ZeroTier_BSL_1.1 & MIT"
-LIC_FILES_CHKSUM = "file://COPYING;md5=11bbae9cacaf61dd7fc10035f6f5c68e \
-                    file://LICENSE.txt;md5=9a913ad4fdae889b528bc6213633b24c \
-                    file://attic/historic/anode/LICENSE.txt;md5=d32239bcb673463ab874e80d47fae504 \
-                    file://debian/copyright;md5=fa37ab40fd5e287272ec142be45a54e4 \
-                    file://ext/http-parser/LICENSE-MIT;md5=20d989143ee48a92dacde4f06bbcb59a \
-                    file://ext/json/LICENSE.MIT;md5=f8a8f918f1513404c8366d7a63ab6d97 \
-                    file://ext/libnatpmp/LICENSE;md5=63b8bf0fd09f4909d823a94c6e6fc06b \
-                    file://ext/miniupnpc/LICENSE;md5=4a95d5317ee6dac993b7598848c72c1e \
-		"
+# Note: COPYING has been removed
+LIC_FILES_CHKSUM = " \
+    file://LICENSE.txt;md5=9a913ad4fdae889b528bc6213633b24c \
+    file://attic/historic/anode/LICENSE.txt;md5=d32239bcb673463ab874e80d47fae504 \
+    file://debian/copyright;md5=f4a6ffbe72aad9cedd587bcb18904813 \
+    file://ext/http-parser/LICENSE-MIT;md5=20d989143ee48a92dacde4f06bbcb59a \
+    file://ext/json/LICENSE.MIT;md5=f8a8f918f1513404c8366d7a63ab6d97 \
+    file://ext/libnatpmp/LICENSE;md5=63b8bf0fd09f4909d823a94c6e6fc06b \
+    file://ext/miniupnpc/LICENSE;md5=4a95d5317ee6dac993b7598848c72c1e \
+"
 
 # detected but not included license
 # file://ext/hiredis-0.14.1/COPYING;md5=d84d659a35c666d23233e54503aaea51
