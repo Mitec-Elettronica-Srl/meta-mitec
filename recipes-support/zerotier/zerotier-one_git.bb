@@ -103,7 +103,7 @@ CARGO_BUILD_FLAGS = "-v --frozen --target ${RUST_HOST_SYS} ${BUILD_MODE}"
 EXTRA_OEMAKE = " \
     DESTDIR=${D} \
     STRIP=echo \
-    ZT_CARGO_FLAGS=\"${CARGO_BUILD_FLAGS}\" \
+    ZT_CARGO_FLAGS='${CARGO_BUILD_FLAGS}' \
 "
 
 inherit systemd
