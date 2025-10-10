@@ -4,7 +4,7 @@ SECTION = "net"
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = "file://src/${GO_IMPORT}/LICENSE;md5=d995c1c44529856a0f35a5ad43e51cc5"
 
-SRC_URI = "git://github.com/tailscale/tailscale.git;nobranch=1;tag=v${PV}"
+SRC_URI = "git://github.com/tailscale/tailscale.git;protocol=https;nobranch=1;tag=v${PV}"
 
 inherit go-mod systemd
 
@@ -14,7 +14,7 @@ GO_INSTALL = "${GO_IMPORT}/cmd/tailscale ${GO_IMPORT}/cmd/tailscaled"
 
 FILES_${PN} += "${systemd_unitdir}/*"
 
-do_install() {
+do_install:append() {
     install -d ${D}/${bindir}
     install -d ${D}/${sbindir}
     install ${B}/bin/tailscale ${D}/${bindir}/tailscale
