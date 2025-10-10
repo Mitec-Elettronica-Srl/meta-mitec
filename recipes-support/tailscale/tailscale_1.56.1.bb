@@ -14,6 +14,8 @@ GO_INSTALL = "${GO_IMPORT}/cmd/tailscale ${GO_IMPORT}/cmd/tailscaled"
 
 FILES_${PN} += "${systemd_unitdir}/*"
 
+do_compile[network] = "1"
+
 do_install:append() {
     install -d ${D}/${bindir}
     install -d ${D}/${sbindir}
