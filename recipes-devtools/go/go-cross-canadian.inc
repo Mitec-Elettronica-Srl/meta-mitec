@@ -53,7 +53,7 @@ do_install() {
 	install -d ${D}${libdir}/go/pkg/tool
 	cp --preserve=mode,timestamps -R ${B}/pkg/tool/${HOST_GOTUPLE} ${D}${libdir}/go/pkg/tool/
 	install -d ${D}${bindir} ${D}${libdir}/go/bin
-	for f in $(find ${B}/${GO_BUILD_BINDIR} -type f)
+	for f in ${B}/${GO_BUILD_BINDIR}/*
 	do
 		base=`basename $f`
 		install -m755 $f ${D}${libdir}/go/bin
