@@ -16,7 +16,7 @@ FILES_${PN} += "${systemd_unitdir}/*"
 
 do_compile[network] = "1"
 
-go_do_compile() {
+do_compile() {
         export TMPDIR="${GOTMPDIR}"
         if [ -n "${GO_INSTALL}" ]; then
             if [ -n "${GO_LINKSHARED}" ]; then
@@ -35,7 +35,7 @@ go_do_compile() {
         fi
 }
 
-do_install {
+do_install() {
     install -d ${D}/${bindir}
     install -d ${D}/${sbindir}
     install ${B}/bin/tailscale ${D}/${bindir}/tailscale
