@@ -16,7 +16,26 @@ FILES_${PN} += "${systemd_unitdir}/*"
 
 do_compile[network] = "1"
 
-do_install:append() {
+go_do_compile() {
+        export TMPDIR="${GOTMPDIR}"
+        if [ -n "${GO_INSTALL}" ]; then
+            if [ -n "${GO_LINKSHARED}" ]; then
+                    ${GO} install ${GOBUILDFLAGS} tailscale.com/cmd/tailscaled
+                    rm -rf ${B}/bin
+            fi
+            ${GO} install ${GO_LINKSHARED} ${GOBUILDFLAGS} tailscale.com/cmd/tailscaled
+        fi
+
+        if [ -n "${GO_INSTALL}" ]; then
+            if [ -n "${GO_LINKSHARED}" ]; then
+                    ${GO} install ${GOBUILDFLAGS} tailscale.com/cmd/tailscale
+                    rm -rf ${B}/bin
+            fi
+            ${GO} install ${GO_LINKSHARED} ${GOBUILDFLAGS} tailscale.com/cmd/tailscale
+        fi
+}
+
+do_install {
     install -d ${D}/${bindir}
     install -d ${D}/${sbindir}
     install ${B}/bin/tailscale ${D}/${bindir}/tailscale
