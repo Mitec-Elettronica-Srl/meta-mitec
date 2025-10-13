@@ -41,7 +41,7 @@ do_install() {
     fi
 }
 
-FILES:${PN} += "
+FILES:${PN} += " \
     ${bindir}/tailscale \
     ${bindir}/tailscaled \
     ${systemd_unitdir}/* \    
