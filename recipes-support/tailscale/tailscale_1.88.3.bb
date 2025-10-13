@@ -16,6 +16,9 @@ FILES_${PN} += "${systemd_unitdir}/*"
 
 do_compile[network] = "1"
 
+unset GO_DYNLINK
+GO_LINKSHARED=""
+
 do_compile:prepend() {
     export CGO_ENABLED=0
     export LD=ld.lld
