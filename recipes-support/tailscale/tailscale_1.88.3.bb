@@ -16,6 +16,11 @@ FILES_${PN} += "${systemd_unitdir}/*"
 
 do_compile[network] = "1"
 
+do_compile:prepend() {
+    unset GO_DYNLINK
+    export GO_LINKSHARED=""
+}
+
 do_install() {
     install -d ${D}/${bindir}
     install -d ${D}/${sbindir}
