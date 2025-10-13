@@ -17,8 +17,8 @@ FILES_${PN} += "${systemd_unitdir}/*"
 do_compile[network] = "1"
 
 do_compile:prepend() {
-    unset GO_DYNLINK
-    export GO_LINKSHARED=""
+    export CGO_ENABLED=1
+    export LD=ld.lld
 }
 
 do_install() {
