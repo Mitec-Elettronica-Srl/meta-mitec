@@ -17,7 +17,7 @@ FILES_${PN} += "${systemd_unitdir}/*"
 do_compile[network] = "1"
 
 do_compile:prepend() {
-    export CGO_ENABLED=1
+    export CGO_ENABLED=0
     export LD=ld.lld
 }
 
