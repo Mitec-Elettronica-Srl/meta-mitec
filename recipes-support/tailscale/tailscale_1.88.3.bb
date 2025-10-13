@@ -12,8 +12,6 @@ GO_IMPORT = "tailscale.com"
 GO_WORKDIR = "${GO_IMPORT}"
 GO_INSTALL = "${GO_IMPORT}/cmd/tailscale ${GO_IMPORT}/cmd/tailscaled"
 
-FILES_${PN} += "${systemd_unitdir}/*"
-
 do_compile[network] = "1"
 
 unset GO_DYNLINK
@@ -27,8 +25,8 @@ do_compile:prepend() {
 do_install() {
     install -d ${D}/${bindir}
     install -d ${D}/${sbindir}
-    install ${B}/bin/tailscale ${D}/${bindir}/tailscale
-    install ${B}/bin/tailscaled ${D}/${sbindir}/tailscaled
+    install ${B}/bin/linux_arm64/tailscale ${D}/${bindir}/tailscale
+    install ${B}/bin/linux_arm64/tailscaled ${D}/${sbindir}/tailscaled
 
     if ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'true', 'false', d)}; then
         install -d ${D}${sysconfdir}/default/
@@ -42,6 +40,12 @@ do_install() {
         ln -s ${systemd_unitdir}/system/tailscaled.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/tailscaled.service
     fi
 }
+
+FILES:${PN} += "
+    ${bindir}/tailscale \
+    ${bindir}/tailscaled \
+    ${systemd_unitdir}/* \    
+"
 
 SYSTEMD_PACKAGES = "${PN}"
 SYSTEMD_SERVICE_${PN} = "tailscaled.service"
