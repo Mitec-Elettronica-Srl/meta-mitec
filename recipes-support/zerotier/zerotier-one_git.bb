@@ -92,7 +92,7 @@ RUSTFLAGS ??= ""
 # and will require an up to date Cargo.lock file.
 # This force the package being built to already ship a Cargo.lock, in the end
 # this is what we want, at least, for reproducibility of the build.
-CARGO_BUILD_FLAGS = "--frozen"
+#CARGO_BUILD_FLAGS = "--frozen"
 
 EXTRA_OEMAKE = " \
     DESTDIR=${D} \
