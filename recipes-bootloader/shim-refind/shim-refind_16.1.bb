@@ -12,13 +12,15 @@ inherit autotools-brokensep
 
 do_configure[noexec] = "1"
 
-do_compile() {
-    oe_runmake
-}
+#do_compile() {
+#    oe_runmake
+#}
+#
+#do_install() {
+#    install -d ${D}${bindir}
+#    install -m 0755 myprog ${D}${bindir}/myprog
+#}
+#
+#FILES_${PN} = "${bindir}/myprog"
 
-do_install() {
-    install -d ${D}${bindir}
-    install -m 0755 myprog ${D}${bindir}/myprog
-}
-
-FILES_${PN} = "${bindir}/myprog"
+COMPATIBLE_MACHINE = "(intel-corei7-64)|(intel-skylake-64)"
