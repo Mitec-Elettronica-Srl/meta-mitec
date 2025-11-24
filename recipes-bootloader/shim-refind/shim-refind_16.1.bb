@@ -3,7 +3,7 @@ LICENSE = "CLOSED"
 #LICENSE = "MIT"
 #LIC_FILES_CHKSUM = "file://LICENSE;md5=0123456789abcdef0123456789abcdef"
 
-SRC_URI = "git://github.com/rhboot/shim.git;protocol=https;nobranch=1;tag=${PV}"
+SRC_URI = "gitsm://github.com/rhboot/shim.git;protocol=https;nobranch=1;tag=${PV}"
 
 S = "${WORKDIR}/git"
 
