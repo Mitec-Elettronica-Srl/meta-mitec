@@ -7,6 +7,10 @@ SRC_URI = "gitsm://github.com/rhboot/shim.git;protocol=https;nobranch=1;tag=${PV
 
 S = "${WORKDIR}/git"
 
+DEPENDS += "elfutils elfutils-native"
+
+RDEPENDS${PN} += "elfutils"
+
 EXTRA_OEMAKE = " PREFIX=${prefix} "
 
 inherit autotools-brokensep
