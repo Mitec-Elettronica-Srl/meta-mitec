@@ -7,13 +7,13 @@ SRC_URI = "gitsm://github.com/rhboot/shim.git;protocol=https;nobranch=1;tag=${PV
 
 S = "${WORKDIR}/git"
 
-DEPENDS += "elfutils elfutils-native"
+DEPENDS += "elfutils elfutils-native pkgconfig-native"
 
 RDEPENDS${PN} += "elfutils"
 
-EXTRA_OEMAKE = " PREFIX=${prefix} "
+EXTRA_OEMAKE = " PREFIX=${prefix} EFIDIR=${prefix}/efi "
 
-inherit autotools-brokensep
+inherit pkgconfig autotools-brokensep
 
 do_configure[noexec] = "1"
 
