@@ -5,7 +5,7 @@ LICENSE = "CLOSED"
 
 SRC_URI = "git://github.com/rhboot/shim.git;protocol=https;nobranch=1;tag=${PV}"
 
-#S = "${WORKDIR}/mypkg-1.0"
+S = "${WORKDIR}/git"
 
 EXTRA_OEMAKE = " PREFIX=${prefix} "
 
