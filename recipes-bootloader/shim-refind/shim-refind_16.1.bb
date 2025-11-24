@@ -20,9 +20,15 @@ inherit pkgconfig autotools-brokensep
 do_compile() {
     export CFLAGS="${CFLAGS} -I${STAGING_INCDIR}"
     export LDFLAGS="${LDFLAGS} -L${STAGING_LIBDIR}"
-    oe_runmake
+
+    if [ ! -f "${STAGING_DIR_TARGET}${includedir}/libelf.h" ] && [ ! -f "${STAGING_DIR_TARGET}${includedir}/libelf/libelf.h" ]; then
+        bberror "FUCKIT: libelf.h not found in ${STAGING_DIR_TARGET}${includedir}"
+        false
+    fi
+
+    oe_runmake CFLAGS="${CFLAGS} -I${STAGING_INCDIR}/libelf -I${STAGING_INCDIR} -I${includedir}" LDFLAGS="${LDFLAGS} -L${STAGING_LIBDIR} -L${libdir}"
 }
-#
+
 #do_install() {
 #    install -d ${D}${bindir}
 #    install -m 0755 myprog ${D}${bindir}/myprog
