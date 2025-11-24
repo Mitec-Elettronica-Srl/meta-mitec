@@ -7,13 +7,13 @@ SRC_URI = "gitsm://github.com/rhboot/shim.git;protocol=https;nobranch=1;tag=${PV
 
 S = "${WORKDIR}/git"
 
-DEPENDS += "elfutils elfutils-native"
+DEPENDS += "elfutils elfutils-native pkgconfig-native"
 
 RDEPENDS${PN} += "elfutils"
 
 EXTRA_OEMAKE = " PREFIX=${prefix} EFIDIR=${prefix}/efi "
 
-inherit autotools-brokensep
+inherit pkgconfig autotools-brokensep
 
 #do_configure[noexec] = "1"
 
@@ -39,7 +39,7 @@ do_compile() {
         false
     fi
 
-    oe_runmake CC="${CC}" CXX="${CXX}" HOSTCC="${HOSTCC}" CFLAGS="${CFLAGS} -I${STAGING_INCDIR}/libelf -I${STAGING_INCDIR} -I${includedir}" LDFLAGS="${LDFLAGS} -L${STAGING_LIBDIR} -L${libdir}"
+    oe_runmake CC="${CC}" CXX="${CXX}" HOSTCC="${HOSTCC}" CFLAGS="${CFLAGS} -I${STAGING_INCDIR}/libelf -I${STAGING_INCDIR} -I${STAGING_DIR_TARGET}${includedir} -I${STAGING_DIR_TARGET}${includedir}/libelf" LDFLAGS="${LDFLAGS} -L${STAGING_LIBDIR} -L${libdir}"
 }
 
 #do_install() {
