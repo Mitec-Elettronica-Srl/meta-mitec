@@ -34,7 +34,7 @@ do_compile() {
     export CFLAGS="${CFLAGS} -I${STAGING_INCDIR}"
     export LDFLAGS="${LDFLAGS} -L${STAGING_LIBDIR}"
 
-    oe_runmake CC="${CC}" CXX="${CXX}" HOSTCC="${HOSTCC}" CFLAGS="${CFLAGS} -I${STAGING_INCDIR}/libelf -I${STAGING_INCDIR} -I${STAGING_DIR_TARGET}${includedir} -I${STAGING_DIR_TARGET}${includedir}/libelf -I${S}/gnu-efi/inc/ -I${S}/gnu-efi/inc/x86_64/ -I${S} -I${S}/include -I${S}/include/system -I${S}/Cryptlib/Include" LDFLAGS="${LDFLAGS} -L${STAGING_LIBDIR} -L${STAGING_LIBDIR}/${libdir}"
+    oe_runmake CC="${CC}" CXX="${CXX}" HOSTCC="${HOSTCC}" CFLAGS="${CFLAGS} -I${STAGING_INCDIR}/libelf -I${STAGING_INCDIR} -I${STAGING_DIR_TARGET}${includedir} -I${STAGING_DIR_TARGET}${includedir}/libelf -I${S}/gnu-efi/inc/ -I${S}/gnu-efi/inc/x86_64/ -I${S} -I${S}/include -I${S}/include/system -I${S}/Cryptlib -I${S}/Cryptlib/Include" LDFLAGS="${LDFLAGS} -L${STAGING_LIBDIR} -L${STAGING_LIBDIR}/${libdir}"
 }
 
 #do_install() {
